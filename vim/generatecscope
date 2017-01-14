@@ -1,0 +1,29 @@
+#!/bin/sh 
+
+usage()
+{
+   echo "usage : makecscope src_path project_name"
+   echo "I will create cscope db in ~/cscope/project_name"
+}
+
+#if [ $# -ne 2 ]
+#then 
+#    usage
+#    exit
+#fi
+
+#SRC_PATH=$1
+#CSCOPE_PATH=/home/congchen/cscope/$2
+
+#mkdir -p $CSCOPE_PATH
+#cd $CSCOPE_PATH
+
+echo "generate ctags files in current dir!"
+ctags -R
+echo "done!"
+
+echo "generate cscope files in current dir!"
+DIR=`pwd`
+find $DIR -name "*.h" -o -name "*.c" -o -name "*.s" -o -name "*.S" -o -name "Makefile" -o -name "makefile" > cscope.files
+cscope -bkq -i cscope.files
+echo "done!"
