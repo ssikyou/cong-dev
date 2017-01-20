@@ -89,6 +89,7 @@ vnoremap <C-c> "+y
 nnoremap <C-v> "+p 
 
 set ts=4
+set expandtab
 set number
 set shiftwidth=4
 set hls
