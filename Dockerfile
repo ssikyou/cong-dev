@@ -12,8 +12,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends\
 	cscope \
 #	vim-gnome \
 	bash-completion \
+    git \
 && rm -rf /var/lib/apt/lists/*
 
 COPY vim/generatecscope /bin
 COPY vim/vimrc /etc/vim/vimrc.local
 COPY vim/plugin/* /usr/share/vim/vim74/plugin/
+
+RUN git config --global user.name "Cong Chen"
+RUN git config --global user.email ssikyou@gmail.com
+RUN git config --global alias.st status
