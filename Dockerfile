@@ -13,8 +13,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #	vim-gnome \
 	bash-completion \
     git \
+    tree \
 && rm -rf /var/lib/apt/lists/*
 
+COPY bashrc /root/.bashrc
 COPY vim/generatecscope /bin
 COPY vim/vimrc /etc/vim/vimrc.local
 COPY vim/plugin/* /usr/share/vim/vim74/plugin/
