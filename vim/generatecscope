@@ -24,6 +24,6 @@ echo "done!"
 
 echo "generate cscope files in current dir!"
 DIR=`pwd`
-find $DIR -name "*.h" -o -name "*.c" -o -name "*.s" -o -name "*.S" -o -name "Makefile" -o -name "makefile" > cscope.files
+find $DIR -name "*.h" -o -name "*.c" -o -name "*.s" -o -name "*.S" -o -name "Makefile" -o -name "makefile" -o -name "*.php" > cscope.files
 cscope -bkq -i cscope.files
 echo "done!"

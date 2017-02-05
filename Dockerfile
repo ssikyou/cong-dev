@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	vim \
 	ctags \
 	cscope \
-#	vim-gnome \
+	vim-gnome \
 	bash-completion \
     git \
     tree \
